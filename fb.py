@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import print_function
 import argparse
@@ -384,7 +384,7 @@ class Compressor:
 class ConfigParser:
     def __init__(self, file, ignoreMissing=False):
         self.config = {}
-        self.config["pastebin"] = "https://paste.xinu.at"
+        self.config["pastebin"] = "https://p.elaon.de"
         self.config["clipboard_cmd"] = "xclip"
         if os.uname()[0] == "Darwin":
             self.config["clipboard_cmd"] = "pbcopy"
@@ -462,7 +462,7 @@ class FBClient:
         signal.signal(signal.SIGINT, self.handle_ctrl_c)
 
         parser = argparse.ArgumentParser(
-                description="Upload/nopaste file(s)/stdin to paste.xinu.at and copy URL(s) to clipboard.")
+                description="Upload/nopaste file(s)/stdin to p.elaon.de and copy URL(s) to clipboard.")
 
         switches = parser.add_argument_group('switches').add_mutually_exclusive_group()
         switches.add_argument("-d", "--delete", dest="mode", action="store_const", const=self.modes.delete,
